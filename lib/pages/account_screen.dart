@@ -3,19 +3,27 @@ import 'package:flutter/material.dart';
 class CameraScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      floatingActionButton: new FloatingActionButton(
-          backgroundColor: Theme.of(context).primaryColor,
-          child: new Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondRoute()),
-            );
-          }),
+    return new MaterialApp(
+      home: Scaffold(
+        body: Column(children: [
+          Container(
+            alignment: Alignment.bottomCenter,
+            margin: EdgeInsets.only(
+                left: 10.0, right: 10.0, top: 500.0, bottom: 10.0), //Adjust these values to change the position of the button
+            child: RaisedButton(
+                textColor: Colors.black,
+                color: Color(0xFF4DD0F0),
+                child: Text('+ Add a New Account'),
+                onPressed: () {
+                  // This opens a new page to add accounts
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondRoute()),
+                  );
+                }),
+          )
+        ]),
+      ),
     );
   }
 }
@@ -34,4 +42,3 @@ class SecondRoute extends StatelessWidget {
       ),
     );
   }
-}
