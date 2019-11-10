@@ -20,9 +20,9 @@ class CameraScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => SecondRoute()),
                   );
-                }),
+                },),
           )
-        ]),
+        ],),
       ),
     );
   }
