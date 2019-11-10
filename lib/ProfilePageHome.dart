@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/status_screen.dart';
 import 'pages/account_screen.dart';
 import 'pages/info_screen.dart';
-
 
 class ProfilePageHome extends StatefulWidget {
   @override
@@ -16,7 +14,7 @@ class _ProfilePageHomeState extends State<ProfilePageHome>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 3, vsync: this);
+    _tabController = new TabController(length: 2, vsync: this);
   }
 
   @override
@@ -31,7 +29,6 @@ class _ProfilePageHomeState extends State<ProfilePageHome>
           tabs: <Widget>[
             new Tab(text: "ACCOUNTS"),
             new Tab(text: "INFO"),
-            new Tab(text: "STATUS"),
           ],
         ),
         actions: <Widget>[
@@ -47,10 +44,8 @@ class _ProfilePageHomeState extends State<ProfilePageHome>
         children: <Widget>[
           new CameraScreen(),
           new ChatScreen(),
-          new StatusScreen(),
         ],
       ),
-     
     );
   }
 }
