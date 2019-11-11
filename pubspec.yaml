@@ -36,6 +36,8 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 flutter:
+  assets:
+    - assets/images/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -84,3 +86,4 @@ flutter:
     androidX: false
     androidPackage: profilepage.profile_page
     iosBundleIdentifier: profilepage.profilePage
+
