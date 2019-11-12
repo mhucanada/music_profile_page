@@ -24,6 +24,7 @@ class _ProfilePageHomeState extends State<ProfilePageHome>
         preferredSize: Size.fromHeight(115.0),
         child: new AppBar(
           leading: new InkWell(
+
             // Displays profile picture but I don't know how to center it properly
             onTap: () {
               print("Click Profile Pic");
@@ -136,26 +137,24 @@ class DataSearch extends SearchDelegate<String> {
         : results.where((p) => p.startsWith(query)).toList();
 
     return ListView.builder(
-      itemBuilder: (context, index) =>
-          ListTile(
-            onTap: () {
-              showResults(context);
-            },
-            leading: Icon(Icons.location_city),
-            title: RichText(
-              text: TextSpan(
-                text: suggestionList[index].substring(0, query.length),
-                style: TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
-                children: [
-                  TextSpan(
-                    text: suggestionList[index].substring(query.length),
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
+      itemBuilder: (context, index) => ListTile(
+        onTap: () {
+          showResults(context);
+        },
+        leading: Icon(Icons.location_city),
+        title: RichText(
+          text: TextSpan(
+            text: suggestionList[index].substring(0, query.length),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            children: [
+              TextSpan(
+                text: suggestionList[index].substring(query.length),
+                style: TextStyle(color: Colors.grey),
               ),
-            ),
+            ],
           ),
+        ),
+      ),
       itemCount: suggestionList.length,
     );
   }
