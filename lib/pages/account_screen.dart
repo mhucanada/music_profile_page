@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_page/models/accounts_model.dart';
 import 'package:profile_page/models/add_new_account_model.dart';
 
 class CameraScreen extends StatefulWidget {
@@ -13,34 +14,57 @@ class _CameraScreenState extends State<CameraScreen> {
       home: Scaffold(
         body: Column(
           children: [
-            Container(
-              alignment: Alignment.bottomCenter,
-              margin: EdgeInsets.only(
-                  left: 10.0, right: 10.0, top: 500.0, bottom: 10.0),
-              //Adjust these values to change the position of the button
-              child: RaisedButton(
-                textColor: Colors.black,
-                color: Color(0xFF4DD0F0),
-                child: Text('+ Add a New Account'),
-                onPressed: () {
-                  // This opens a new page to add accounts
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SecondRoute(),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: dummyData.length,
+              itemBuilder: (context, i) => new Column(
+                children: <Widget>[
+                  new Divider(
+                    height: 10.0,
+                  ),
+                  new ListTile(
+                    leading: new CircleAvatar(
+                      foregroundColor: Theme.of(context).primaryColor,
+                      backgroundColor: Colors.white,
+                      backgroundImage: new AssetImage(dummyData[i].accountlogo),
                     ),
-                  );
-                },
+                    title: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new Text(
+                          dummyData[i].accountname,
+                          style: new TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: RaisedButton(
+            textColor: Colors.black,
+            color: Color(0xFF4DD0F0),
+            child: Text('+ Add a New Account'),
+            onPressed: () {
+              // This opens a new page to add accounts
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SecondRoute(),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
   }
 }
-
 
 // THIS IS THE OLD CODE
 ///class SecondRoute extends StatelessWidget {

@@ -10,7 +10,12 @@ class AccountModel {
 List<AccountModel> dummyData = [
   new AccountModel(
     accountname: 'Michael Hu',
-    accountlogo: "assets/images/Spotify_Icon_RGB_Green",
-    playlistcount: "4"
+    accountlogo: "assets/images/Spotify_Icon_RGB_Green.png",
+    playlistcount: "4",
+  ),
+  new AccountModel(
+    accountname: "Colin Wang",
+    accountlogo: "assets/images/yt_icon_rgb.png",
+    playlistcount: "2",
   ),
 ];

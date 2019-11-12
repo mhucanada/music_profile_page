@@ -27,10 +27,9 @@ class SecondRoute extends StatelessWidget {
           ),
           children: <Widget>[
             ListTile(
-              leading: new Image(
-                image: AssetImage('assets/images/Spotify_Icon_RGB_Green.png'),
-                height: 50.0,
-                width: 70.0,
+              leading: new CircleAvatar(
+                backgroundImage: AssetImage('assets/images/Spotify_Icon_RGB_Green.png'),
+                backgroundColor: Colors.white,
               ),
               title: Text(
                 "Add New Spotify Account",
@@ -49,10 +48,8 @@ class SecondRoute extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: new Image(
-                image: AssetImage('assets/images/youtube.png'),
-                height: 70.0,
-                width: 70.0,
+              leading: new CircleAvatar(
+                backgroundImage: AssetImage('assets/images/yt_icon_rgb.png'),
               ),
               title: Text(
                 "Add New Youtube Account",
@@ -71,10 +68,9 @@ class SecondRoute extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: new Image(
-                image: AssetImage('assets/images/applemusic.png'),
-                height: 70.0,
-                width: 70.0,
+              leading: new CircleAvatar(
+                backgroundImage: AssetImage('assets/images/applemusic.png'),
+                backgroundColor: Colors.white,
               ),
               title: Text(
                 "Add New Music Account",
